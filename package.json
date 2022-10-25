@@ -1,0 +1,45 @@
+{
+  "name": "raas-data-service-mesh-core",
+  "description": "RaaS Data Service Core Framework",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "jest",
+    "start": "mesh start",
+    "dev": "tsc && mesh dev",
+    "build": "tsc && mesh build",
+    "lint": "eslint 'src/**/*.ts?(x)'",
+    "clean": "rimraf dist && rimraf .mesh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@scm.platform.avalara.io:raas/raas-foundation/raas-data-service-mesh-core.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-secrets-manager": "^3.56.0",
+    "@envelop/core": "3.0.2",
+    "@envelop/generic-auth": "5.0.0",
+    "@graphql-mesh/cli": "0.78.33",
+    "@graphql-mesh/graphql": "0.31.24",
+    "@graphql-mesh/openapi": "0.26.1",
+    "@graphql-mesh/plugin-prometheus": "0.2.0",
+    "@graphql-mesh/transform-filter-schema": "0.14.103",
+    "graphql": "16.6.0",
+    "js-yaml": "4.1.0",
+    "node-fetch": "^2.6.7",
+    "prom-client": "14.1.0",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.6.2",
+    "eslint": "^8.21.0",
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "@typescript-eslint/parser": "^5.41.0",
+    "jest": "^28.1.3",
+    "nodemon": "^2.0.19",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.8.4"
+  }
+}

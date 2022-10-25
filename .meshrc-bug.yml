@@ -1,0 +1,30 @@
+sources:
+  - name: data-source
+    handler:
+      openapi:
+        source: https://petstore.swagger.io/v2/swagger.json
+        baseUrl: https://petstore.swagger.io/
+        operationHeaders:
+          Authorization: "{context.headers['authorization']}"
+  - name: data-source
+    handler:
+      openapi:
+        source: https://petstore.swagger.io/v2/swagger.json
+        baseUrl: https://petstore.swagger.io/
+        operationHeaders:
+          Authorization: "{context.headers['authorization']}"
+          
+plugins:
+  - prometheus: 
+    requestCount: true
+    requestSummary: true
+    execute: true
+    errors: true
+    endpoint: /metrics
+
+additionalEnvelopPlugins: 'dist/src/plugins'
+
+serve:
+  port: 8888
+  playground: true
+  playgroundTitle: "RaaS Data Service Mesh Playground"
