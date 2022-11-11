@@ -547,7 +547,13 @@ sources[0] = {
           transforms: dataSourceTransforms
         }
 additionalEnvelopPlugins[0] = await UsePrometheus({
-          ...(null),
+          ...({
+  "requestCount": true,
+  "requestSummary": true,
+  "execute": true,
+  "errors": true,
+  "endpoint": "/metrics"
+}),
           logger: logger.child("prometheus"),
           cache,
           pubsub,
